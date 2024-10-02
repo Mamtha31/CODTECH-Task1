@@ -1,0 +1,156 @@
+/*index.html*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="about">
+            <h1>About Me</h1>
+            <p>Brief introduction about yourself and your background.</p>
+        </section>
+
+        <section id="projects">
+            <h1>My Projects</h1>
+            <div class="project-container">
+                <div class="project">
+                    <h2>Project Title 1</h2>
+                    <p>Description of your project.</p>
+                </div>
+                <div class="project">
+                    <h2>Project Title 2</h2>
+                    <p>Description of your project.</p>
+                </div>
+                <div class="project">
+                    <h2>Project Title 3</h2>
+                    <p>Description of your project.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Contact Me</h1>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+/*style.css*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project {
+    background: #f4f4f4;
+    margin: 0.5rem;
+    padding: 1rem;
+    flex: 1 1 calc(30% - 1rem);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 0.5rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .project {
+        flex: 1 1 calc(100% - 1rem);
+    }
+}
+/*script.js*/
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent the default form submission
+    alert("Message sent! Thank you for reaching out.");
+    this.reset(); // Reset the form fields
+});
